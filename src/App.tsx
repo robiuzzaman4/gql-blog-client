@@ -5,7 +5,7 @@ const App = () => {
   return (
     <main>
       <Navbar />
-      <section className="min-h-[calc(100vh-56px)] mt-14">
+      <section className="min-h-[calc(100vh-56px)] pt-14">
         <Outlet />
       </section>
     </main>
