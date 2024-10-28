@@ -1,11 +1,14 @@
-import { Button } from "@radix-ui/themes";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button>Let's go</Button>
-    </div>
+    <main>
+      <Navbar />
+      <section className="min-h-[calc(100vh-56px)] mt-14">
+        <Outlet />
+      </section>
+    </main>
   );
 };
 
