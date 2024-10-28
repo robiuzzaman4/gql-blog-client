@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="h-full w-full max-w-screen-lg mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-1">
           <RiBloggerFill className="text-indigo-600"/>
-          <p className="text-base font-medium">GQL Blogs</p>
+          <p className="text-base font-semibold">GQL Blogs</p>
         </Link>
       </div>
     </nav>
