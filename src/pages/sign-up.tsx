@@ -9,7 +9,7 @@ import {
 } from "@radix-ui/themes";
 import { RiLockPasswordLine, RiMailLine, RiUser3Line } from "@remixicon/react";
 import { FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const SIGNUP = gql`
@@ -29,6 +29,9 @@ const SIGNUP = gql`
 const SignUp = () => {
   // sign up mutations state and hooks
   const [signup, { loading }] = useMutation(SIGNUP);
+
+  // router
+  const navigate = useNavigate();
 
   // handle sign up
   const handleSignUp = async (e: FormEvent<HTMLFormElement>) => {
@@ -50,9 +53,9 @@ const SignUp = () => {
         },
       });
       const message = response?.data?.signup?.message;
-      const token = response?.data?.signup?.token;
       if (message === "Signup Successfull!") {
         toast.success(message);
+        navigate("/signin");
       } else {
         toast.error(message);
       }

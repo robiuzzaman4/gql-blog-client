@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")!).render(
     <ApolloProvider client={client}>
       <ThemeProvider defaultTheme="light">
         <Theme>
-          <Toaster />
+          <Toaster position="top-center"/>
           <RouterProvider router={router} />
         </Theme>
       </ThemeProvider>
