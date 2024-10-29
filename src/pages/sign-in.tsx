@@ -39,8 +39,10 @@ const SignIn = () => {
         },
       });
       const message = response?.data?.signin?.message;
+      const token = response?.data?.signin?.token;
       if (message === "Signin Successfull!") {
         toast.success(message);
+        localStorage.setItem("auth-token", JSON.stringify(token));
         navigate("/");
       } else {
         toast.error(message);
