@@ -1,4 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
+import BlogPostCard from "../components/blogpost-card";
+import { Post } from "../types";
 
 const POSTS = gql`
   query posts {
@@ -20,7 +22,7 @@ const POSTS = gql`
 const HomePage = () => {
   const { loading, error, data } = useQuery(POSTS);
 
-  const posts = data.posts;
+  const posts = data?.posts;
   console.log("posts", posts);
 
   if (loading) return <p>Loading...</p>;
@@ -30,8 +32,8 @@ const HomePage = () => {
     <section className="py-14 w-full max-w-screen-lg mx-auto px-4">
       {posts && posts?.length > 0 ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts?.map((post) => (
-            <div key={post?.id}>{post?.title}</div>
+          {posts?.map((post: Post) => (
+            <BlogPostCard key={post?.id} post={post} />
           ))}
         </div>
       ) : (
