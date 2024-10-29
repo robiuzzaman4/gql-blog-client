@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./router/router.tsx";
 import { ThemeProvider } from "./components/theme-provider.tsx";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { Toaster } from "sonner";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
     <ApolloProvider client={client}>
       <ThemeProvider defaultTheme="light">
         <Theme>
+          <Toaster />
           <RouterProvider router={router} />
         </Theme>
       </ThemeProvider>
