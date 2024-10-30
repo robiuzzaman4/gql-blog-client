@@ -103,6 +103,7 @@ const SignUp = () => {
           <TextArea placeholder="Enter Your Bio" name="bio" required />
           <div className="w-full flex items-center justify-end">
             <Button
+              style={{ width: "100%" }}
               type="submit"
               className="hover:cursor-pointer"
               disabled={loading}

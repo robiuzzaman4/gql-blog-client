@@ -77,16 +77,16 @@ const SignIn = () => {
               <RiLockPasswordLine className="size-4 text-gray-10" />
             </TextField.Slot>
           </TextField.Root>
-          <div className="w-full flex items-center justify-end">
-            <Button
-              type="submit"
-              className="hover:cursor-pointer"
-              disabled={loading}
-            >
-              <Spinner loading={loading} />
-              Sign In
-            </Button>
-          </div>
+          <Button
+            style={{ width: "100%" }}
+            type="submit"
+            className="hover:cursor-pointer"
+            disabled={loading}
+          >
+            <Spinner loading={loading} />
+            Sign In
+          </Button>
+
           <p className="text-sm font-normal text-gray-9">
             Don't have any account?{" "}
             <Link to="/signup" className="text-accent-9">
