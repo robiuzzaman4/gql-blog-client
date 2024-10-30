@@ -10,7 +10,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Toaster } from "sonner";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: "https://gql-blog-server.vercel.app/api/graphql/",
   cache: new InMemoryCache(),
 });
 
